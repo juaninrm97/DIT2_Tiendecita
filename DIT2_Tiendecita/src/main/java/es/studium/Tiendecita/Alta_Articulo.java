@@ -18,6 +18,9 @@ public class Alta_Articulo extends JDialog {
 	private static final long serialVersionUID = 1L;
 	private final JPanel contentPanel = new JPanel();
 	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
+	private JTextField textField_3;
 
 	/**
 	 * Create the dialog.
@@ -35,22 +38,49 @@ public class Alta_Articulo extends JDialog {
 		btnMenuPrincipal.setBounds(0, 0, 121, 23);
 		contentPanel.add(btnMenuPrincipal);
 		
-		JLabel lblNewLabel = new JLabel("Introduzca alta de artículo:");
-		lblNewLabel.setBounds(39, 78, 177, 14);
+		JLabel lblNewLabel = new JLabel("Descripción Artículo");
+		lblNewLabel.setBounds(33, 90, 177, 14);
 		contentPanel.add(lblNewLabel);
 		
 		textField = new JTextField();
-		textField.setBounds(205, 75, 168, 20);
+		textField.setBounds(204, 87, 168, 20);
 		contentPanel.add(textField);
 		textField.setColumns(10);
 		
 		JButton btnCancelar = new JButton("Cancelar");
-		btnCancelar.setBounds(110, 123, 89, 23);
+		btnCancelar.setBounds(79, 201, 89, 23);
 		contentPanel.add(btnCancelar);
 		
 		JButton btnConfirmar = new JButton("Confirmar");
-		btnConfirmar.setBounds(234, 123, 108, 23);
+		btnConfirmar.setBounds(233, 201, 108, 23);
 		contentPanel.add(btnConfirmar);
+		
+		JLabel lblPrecio = new JLabel("Precio:");
+		lblPrecio.setBounds(33, 127, 177, 14);
+		contentPanel.add(lblPrecio);
+		
+		JLabel lblStock = new JLabel("Stock:");
+		lblStock.setBounds(33, 163, 177, 14);
+		contentPanel.add(lblStock);
+		
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		textField_1.setBounds(204, 121, 168, 20);
+		contentPanel.add(textField_1);
+		
+		textField_2 = new JTextField();
+		textField_2.setColumns(10);
+		textField_2.setBounds(204, 160, 168, 20);
+		contentPanel.add(textField_2);
+		
+		textField_3 = new JTextField();
+		textField_3.setColumns(10);
+		textField_3.setBounds(204, 50, 168, 20);
+		contentPanel.add(textField_3);
+		
+		JLabel lblIdArtculo = new JLabel("ID Artículo:");
+		lblIdArtculo.setBounds(33, 53, 177, 14);
+		contentPanel.add(lblIdArtculo);
 		
 		JPanel buttonPane = new JPanel();
 		buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));

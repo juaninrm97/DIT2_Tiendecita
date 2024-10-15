@@ -20,6 +20,9 @@ public class Modificacion_Articulo extends JDialog {
 
 	private static final long serialVersionUID = 1L;
 	private final JPanel contentPanel = new JPanel();
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
 
 	/**
 	 * Create the dialog.
@@ -37,21 +40,48 @@ public class Modificacion_Articulo extends JDialog {
 		btnMenuPrincipal.setBounds(0, 0, 121, 23);
 		contentPanel.add(btnMenuPrincipal);
 		
-		JLabel lblNewLabel = new JLabel("Introduzca artículo a modificar:");
-		lblNewLabel.setBounds(24, 78, 189, 14);
+		JLabel lblNewLabel = new JLabel("Introduzca ID Artículo a modificar:");
+		lblNewLabel.setBounds(23, 50, 214, 14);
 		contentPanel.add(lblNewLabel);
 		
 		JButton btnCancelar = new JButton("Cancelar");
-		btnCancelar.setBounds(110, 123, 89, 23);
+		btnCancelar.setBounds(89, 179, 89, 23);
 		contentPanel.add(btnCancelar);
 		
 		JButton btnConfirmar = new JButton("Confirmar");
-		btnConfirmar.setBounds(234, 123, 108, 23);
+		btnConfirmar.setBounds(243, 179, 108, 23);
 		contentPanel.add(btnConfirmar);
 		
 		Choice choice = new Choice();
-		choice.setBounds(219, 78, 165, 20);
+		choice.setBounds(243, 50, 165, 20);
 		contentPanel.add(choice);
+		
+		JLabel lblNuevaDescripcin = new JLabel("Nueva descripción:");
+		lblNuevaDescripcin.setBounds(23, 81, 189, 14);
+		contentPanel.add(lblNuevaDescripcin);
+		
+		JLabel lblNuevoPrecio = new JLabel("Nuevo precio:");
+		lblNuevoPrecio.setBounds(23, 112, 189, 14);
+		contentPanel.add(lblNuevoPrecio);
+		
+		JLabel lblNuevoStock = new JLabel("Nuevo stock:");
+		lblNuevoStock.setBounds(23, 143, 189, 14);
+		contentPanel.add(lblNuevoStock);
+		
+		textField = new JTextField();
+		textField.setBounds(243, 78, 165, 20);
+		contentPanel.add(textField);
+		textField.setColumns(10);
+		
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		textField_1.setBounds(243, 109, 165, 20);
+		contentPanel.add(textField_1);
+		
+		textField_2 = new JTextField();
+		textField_2.setColumns(10);
+		textField_2.setBounds(243, 140, 165, 20);
+		contentPanel.add(textField_2);
 		
 		JPanel buttonPane = new JPanel();
 		buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));

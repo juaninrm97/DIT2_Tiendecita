@@ -36,13 +36,25 @@ public class Seguridad_Alta_Ticket extends JDialog {
         btnConfirmar.setBounds(244, 124, 105, 23);
         contentPanel.add(btnConfirmar);
 
+     // Acción del botón Confirmar
+        btnConfirmar.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // Cerrar este diálogo
+                dispose();
+                
+                // Abrir el nuevo diálogo de confirmación pasando la instancia de Alta_Ticket
+                Confirmacion_Alta_Ticket confirmacionDialog = new Confirmacion_Alta_Ticket(altaTicketDialog);
+                confirmacionDialog.setVisible(true);
+            }
+        });
+        
         JButton btnCancelar = new JButton("Cancelar");
         btnCancelar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 // Cerrar este diálogo
                 dispose();
 
-                // Abrir nuevamente el diálogo de alta de artículo
+                // Abrir nuevamente el diálogo de alta de ticket
                 altaTicketDialog.setVisible(true);
             }
         });

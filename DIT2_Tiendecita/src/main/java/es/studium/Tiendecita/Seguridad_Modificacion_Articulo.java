@@ -14,13 +14,13 @@ public class Seguridad_Modificacion_Articulo extends JDialog {
 
     private static final long serialVersionUID = 1L;
     private final JPanel contentPanel = new JPanel();
-    private Modificacion_Articulo modificacionArticuloDialog; // Variable para guardar la instancia del diálogo de alta
+    private Modificacion_Articulo modificacionArticuloDialog; // Variable para guardar la instancia del diálogo de modificación
 
     /**
      * Create the dialog.
      */
     public Seguridad_Modificacion_Articulo(Modificacion_Articulo modificacionArticulo) {
-    	modificacionArticuloDialog = modificacionArticulo; // Guardamos la instancia del diálogo de alta
+        modificacionArticuloDialog = modificacionArticulo; // Guardamos la instancia del diálogo de modificación
         setTitle("TiendecitaJRM - Artículos - Modificación");
         setBounds(100, 100, 450, 300);
         getContentPane().setLayout(new BorderLayout());
@@ -29,12 +29,25 @@ public class Seguridad_Modificacion_Articulo extends JDialog {
         contentPanel.setLayout(null);
 
         JLabel lblNewLabel = new JLabel("¿Quiere confirmar esta modificación?");
-        lblNewLabel.setBounds(130, 61, 219, 14);
+        lblNewLabel.setBounds(115, 60, 219, 14);
         contentPanel.add(lblNewLabel);
 
         JButton btnConfirmar = new JButton("Confirmar");
         btnConfirmar.setBounds(244, 124, 105, 23);
         contentPanel.add(btnConfirmar);
+
+     // Acción del botón Confirmar
+        btnConfirmar.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // Cerrar este diálogo
+                dispose();
+                
+                // Abrir el nuevo diálogo de confirmación y pasar la instancia de Modificacion_Articulo
+                Confirmacion_Modificacion_Articulo confirmacionDialog = new Confirmacion_Modificacion_Articulo(modificacionArticuloDialog);
+                confirmacionDialog.setVisible(true);
+            }
+        });
+
 
         JButton btnCancelar = new JButton("Cancelar");
         btnCancelar.addActionListener(new ActionListener() {
@@ -42,7 +55,7 @@ public class Seguridad_Modificacion_Articulo extends JDialog {
                 // Cerrar este diálogo
                 dispose();
 
-                // Abrir nuevamente el diálogo de alta de artículo
+                // Abrir nuevamente el diálogo de modificación de artículo
                 modificacionArticuloDialog.setVisible(true);
             }
         });

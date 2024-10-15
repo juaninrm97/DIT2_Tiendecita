@@ -36,6 +36,17 @@ public class Seguridad_Alta_Articulo extends JDialog {
         btnConfirmar.setBounds(244, 124, 105, 23);
         contentPanel.add(btnConfirmar);
 
+     // Acción del botón Confirmar
+        btnConfirmar.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // Cerrar este diálogo
+                dispose();
+                
+                // Abrir el nuevo diálogo de confirmación
+                Confirmacion_Alta_Articulo confirmacionDialog = new Confirmacion_Alta_Articulo(altaArticuloDialog);
+                confirmacionDialog.setVisible(true);
+            }
+        });
         JButton btnCancelar = new JButton("Cancelar");
         btnCancelar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {

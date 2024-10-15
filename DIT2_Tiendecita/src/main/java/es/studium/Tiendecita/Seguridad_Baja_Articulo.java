@@ -14,13 +14,13 @@ public class Seguridad_Baja_Articulo extends JDialog {
 
     private static final long serialVersionUID = 1L;
     private final JPanel contentPanel = new JPanel();
-    private Baja_Articulo bajaArticuloDialog; // Variable para guardar la instancia del diálogo de alta
+    private Baja_Articulo bajaArticuloDialog; // Variable para guardar la instancia del diálogo de baja
 
     /**
      * Create the dialog.
      */
     public Seguridad_Baja_Articulo(Baja_Articulo bajaArticulo) {
-        bajaArticuloDialog = bajaArticulo; // Guardamos la instancia del diálogo de alta
+        bajaArticuloDialog = bajaArticulo; // Guardamos la instancia del diálogo de baja
         setTitle("TiendecitaJRM - Artículos - Baja");
         setBounds(100, 100, 450, 300);
         getContentPane().setLayout(new BorderLayout());
@@ -36,13 +36,25 @@ public class Seguridad_Baja_Articulo extends JDialog {
         btnConfirmar.setBounds(244, 124, 105, 23);
         contentPanel.add(btnConfirmar);
 
+        // Acción del botón Confirmar
+        btnConfirmar.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // Cerrar este diálogo
+                dispose();
+                
+                // Abrir el nuevo diálogo de confirmación, pasando la instancia de bajaArticuloDialog
+                Confirmacion_Baja_Articulo confirmacionDialog = new Confirmacion_Baja_Articulo(bajaArticuloDialog);
+                confirmacionDialog.setVisible(true);
+            }
+        });
+
         JButton btnCancelar = new JButton("Cancelar");
         btnCancelar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 // Cerrar este diálogo
                 dispose();
 
-                // Abrir nuevamente el diálogo de alta de artículo
+                // Abrir nuevamente el diálogo de baja de artículo
                 bajaArticuloDialog.setVisible(true);
             }
         });

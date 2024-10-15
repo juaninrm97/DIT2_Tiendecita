@@ -37,8 +37,8 @@ public class Baja_Articulo extends JDialog {
 		btnMenuPrincipal.setBounds(0, 0, 121, 23);
 		contentPanel.add(btnMenuPrincipal);
 		
-		JLabel lblNewLabel = new JLabel("Introduzca baja un artículo:");
-		lblNewLabel.setBounds(26, 78, 173, 14);
+		JLabel lblNewLabel = new JLabel("Introduzca ID Artículo para baja:");
+		lblNewLabel.setBounds(26, 78, 203, 14);
 		contentPanel.add(lblNewLabel);
 		
 		JButton btnCancelar = new JButton("Cancelar");
@@ -50,7 +50,7 @@ public class Baja_Articulo extends JDialog {
 		contentPanel.add(btnConfirmar);
 		
 		Choice choice = new Choice();
-		choice.setBounds(219, 78, 136, 20);
+		choice.setBounds(237, 78, 136, 20);
 		contentPanel.add(choice);
 		
 		JPanel buttonPane = new JPanel();
